@@ -1,0 +1,136 @@
+/* VARIABLES */
+:root {
+  --primary-color: #000033;
+  --grey-light: #938e94;
+  --grey-dark: #5d5c61;
+}
+
+/* BASE STYLES */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+  font-family: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  color: var(--primary-color);
+  font-size: 1.6rem;
+  padding: 0 2rem;
+}
+
+/* NAV STYLES */
+.nav__link {
+  text-decoration: none;
+}
+.logo {
+  width: 22.2rem;
+  height: 5.6rem;
+}
+
+/* MAIN LAYOUT STYLES */
+main {
+  display: flex;
+}
+main section {
+  flex-basis: 50%;
+  margin: 3rem 0;
+  padding: 0 3rem;
+}
+.main {
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid var(--grey-dark);
+}
+
+/* TIMER STYLES */
+.timer {
+  align-self: flex-end;
+  display: inline-flex;
+}
+.timer__text {
+  margin-right: 1rem;
+}
+
+/* FORM STYLES */
+.form {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+}
+.form__group {
+  margin-bottom: 1.5rem;
+}
+.form__field {
+  width: 85%;
+  padding: 0.5rem;
+  border: 1px solid var(--grey-dark);
+  border-radius: 5px;
+  transition: border 0.3s ease-in-out;
+  font-size: 1.5rem;
+  color: #000;
+}
+.form__field::placeholder {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.25rem;
+  color: var(--grey-light);
+}
+.form__field:focus {
+  outline: none;
+  border: 1px solid var(--primary-color);
+}
+.form__textarea {
+  max-width: 505px;
+  min-height: 25rem;
+}
+.form__input {
+  height: 3.5rem;
+}
+.cta {
+  width: 85%;
+  display: flex;
+  justify-content: flex-end;
+}
+.cta__btn {
+  padding: 0.5rem 1rem;
+  border-radius: 5px 1rem;
+  border: none;
+  background-color: var(--primary-color);
+  color: var(--grey-light);
+  font-size: 1.45rem;
+  transition: all 0.3s ease-in-out;
+}
+.cta__btn:hover,
+.cta__btn:focus {
+  transform: scale(1.05);
+  color: #fff;
+}
+.result__heading {
+  font-size: 3rem;
+  font-weight: 500;
+  letter-spacing: 0.25px;
+}
+.result__text {
+  margin-top: 1rem;
+  box-shadow: inset 1px -1px 5px var(--grey-dark);
+  border-radius: 5px;
+  padding: 1rem;
+}
+.result__summary {
+  margin-top: 3rem;
+}
+.result__desc {
+  display: flex;
+  justify-content: space-between;
+}
+.result__desc:not(:last-child) {
+  margin-bottom: 1rem;
+}
