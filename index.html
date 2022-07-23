@@ -13,7 +13,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
     rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
+  <script defer type="module" src="index.mjs"></script>
 </head>
+
 
 <body>
   <nav class="nav">
@@ -27,33 +29,31 @@
     <section class="main">
       <div class="timer">
         <span class="timer__text">Timer:</span>
-        <span class="timer__count">00:01s</span>
+        <span class="timer__count">00:00.00</span>
       </div>
       <form action="./index.html" class="form">
         <div class="form__group">
-          <textarea class="form__textarea form__field" placeholder="Please enter or paste your text"
+          <textarea class="form__textarea form__field form__input--1" placeholder="Please enter or paste your text"
             required></textarea>
         </div>
+        <div id="error_msg"></div>
         <div class="form__group">
-          <input type="text" class="form__input form__field"
+          <input type="text" class="form__input form__field form__input--2"
             placeholder="Enter the word(s) to be censored, separated by space e.g heck damn" required />
         </div>
         <div class="form__group">
-          <input type="text" class="form__input form__field"
-            placeholder="Enter a symbol to replace the censored word(s) e.g ?, *, @, #" />
+          <input type="text" class="form__input form__field form__input--3"
+            placeholder="Enter replacement symbol or word. Default is '*'" />
         </div>
         <div class="cta">
-          <button class="cta__btn">Redact Now</button>
+          <button class="cta__btn" disabled>Redact Now</button>
         </div>
       </form>
     </section>
     <section class="result">
       <h1 class="result__heading">Results</h1>
       <p class="result__text">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque quo
-        doloremque est eius sequi aperiam assumenda, ab sed corrupti alias,
-        officiis commodi quaerat. Aliquid vel commodi voluptatibus maxime non.
-        Eos.`
+        No words to scramble yet.
       </p>
       <div class="result__summary">
         <div class="result__desc">
@@ -73,6 +73,8 @@
           <span class="result__value">25</span>
         </div>
       </div>
+      <button id="stop">Stop timer</button>
+      <!-- TO BE REMOVED -->
     </section>
   </main>
 

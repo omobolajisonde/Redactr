@@ -59,6 +59,9 @@ main section {
 .timer__text {
   margin-right: 1rem;
 }
+.timer__count {
+  width: 7rem;
+}
 
 /* FORM STYLES */
 .form {
@@ -107,12 +110,24 @@ main section {
   color: var(--grey-light);
   font-size: 1.45rem;
   transition: all 0.3s ease-in-out;
+  cursor: pointer;
 }
 .cta__btn:hover,
 .cta__btn:focus {
   transform: scale(1.05);
   color: #fff;
 }
+.cta__btn:disabled {
+  color: var(--grey-dark);
+  cursor: default;
+}
+.cta__btn:disabled:hover,
+.cta__btn:disabled:focus {
+  color: var(--grey-dark);
+  transform: scale(1);
+}
+
+/* RESULT STYLES */
 .result__heading {
   font-size: 3rem;
   font-weight: 500;
