@@ -20,68 +20,58 @@
 
 <body>
   <nav class="nav">
-      <a href="#" class="nav__link">
-        <div>
-          <img src="./assets/logo.png" alt="Redactr logo" class="logo" />
+    <a href="#" class="nav__link">
+      <div>
+        <img src="./assets/logo.png" alt="Redactr logo" class="logo" />
+      </div>
+    </a>
+  </nav>
+  <main>
+    <section class="main">
+      <form action="./index.html" class="form">
+        <div class="form__group">
+          <textarea class="form__textarea form__field form__input--1" placeholder="Please enter or paste your text"
+            required></textarea>
+          <p class="error__msg">Please make text body at least two-word long!</p>
         </div>
-      </a>
-    </nav>
-    <main>
-      <section class="main">
-        <form action="./index.html" class="form">
-          <div class="form__group">
-            <textarea
-              class="form__textarea form__field form__input--1"
-              placeholder="Please enter or paste your text"
-              required
-            ></textarea>
-            <p class="error__msg">Please make text body at least two-word long!</p>
-          </div>
-          <div class="form__group">
-            <input
-              type="text"
-              class="form__input form__field form__input--2"
-              placeholder="Enter the word(s) to be censored, separated by space e.g heck damn"
-              required
-            />
-            <p class="error__msg">Please enter at least a word to censor!</p>
-          </div>
-          <div class="form__group">
-            <input
-              type="text"
-              class="form__input form__field form__input--3"
-              placeholder="Enter replacement symbol or word. Default is '*'"
-            />
-            <p class="error__msg">Please enter at most one word or symbol for replacement!</p>
-          </div>
-          <div class="cta">
-            <button class="cta__btn" disabled>Redact Now</button>
-          </div>
-        </form>
-      </section>
-      <section class="result">
-        <h1 class="result__heading">Results</h1>
-        <p class="result__text">No words to scramble yet.</p>
-        <div class="result__summary">
-          <div class="result__desc">
-            <span>Words scanned</span>
-            <span class="result__value">25</span>
-          </div>
-          <div class="result__desc">
-            <span>Time taken</span>
-            <span class="result__value">0.3 ms</span>
-          </div>
-          <div class="result__desc">
-            <span>Matched words</span>
-            <span class="result__value">5</span>
-          </div>
-          <div class="result__desc">
-            <span>Matched characters</span>
-            <span class="result__value">25</span>
-          </div>
+        <div class="form__group">
+          <input type="text" class="form__input form__field form__input--2"
+            placeholder="Enter the word(s) to be censored, separated by space e.g heck damn" required />
+          <p class="error__msg">Please enter at least a word to censor!</p>
         </div>
-      </section>
-    </main>
+        <div class="form__group">
+          <input type="text" class="form__input form__field form__input--3"
+            placeholder="Enter replacement symbol or word. Default is '*'" />
+          <p class="error__msg">Please enter at most one word or symbol for replacement!</p>
+        </div>
+        <div class="cta">
+          <button class="cta__btn" disabled>Redact Now</button>
+        </div>
+      </form>
+    </section>
+    <section class="result">
+      <h1 class="result__heading">Results</h1>
+      <p class="result__text" id="result__text">No words to scramble yet.</p>
+      <div class="result__summary">
+        <div class="result__desc">
+          <span>Words scanned</span>
+          <span class="result__value" id="result__value">00</span>
+        </div>
+        <div class="result__desc">
+          <span>Time taken</span>
+          <span class="result__value" id="result__value1">0.0 ms</span>
+        </div>
+        <div class="result__desc">
+          <span>Matched words</span>
+          <span class="result__value" id="result__value2">00</span>
+        </div>
+        <div class="result__desc">
+          <span>Matched characters</span>
+          <span class="result__value" id="result__value3">00</span>
+        </div>
+      </div>
+    </section>
+  </main>
 
   <!-- // ============= EEND DO NOT EDIT ============== // -->
   <script src="index.mjs" type="module"></script>
