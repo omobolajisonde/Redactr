@@ -1,4 +1,5 @@
 function startApp() {
+  const DELAY_SEC = 2000;
   // Creating App Database
   const appDatabase = {};
 
@@ -119,6 +120,19 @@ function startApp() {
     document.getElementById("result__value3").textContent = dataBase.noOfCharsScrambled;
   }
 
+  // DISPLAY SPINNER
+  const toggleSpinner = (showSpinner) => {
+    console.log("I ran o");
+    const elem = document.getElementById("result__text");
+    const spinner = "<span class='loading'></span>";
+    if (showSpinner) {
+      elem.innerHTML = '';
+      elem.innerHTML = spinner;
+    } else {
+      elem.innerHTML = '';
+    }
+  }
+
   formButton.addEventListener("click", function(e) {
     // Preventing Page reload.
     e.preventDefault();
@@ -126,20 +140,28 @@ function startApp() {
     // Start timer
     const startTime = performance.now();
 
+    // Show Spinner
+    toggleSpinner(true);
+
     // Storing valid inputs into the App Database
     appDatabase.sentenceToBeScrambled = input1.value;
     appDatabase.wordsToBeScrambled = input2.value.split(" ");
     appDatabase.scrambledSymbol = input3.value.trim() || "*";
 
-    // Call the scrambled function on the click of the form button
-    scramble(appDatabase);
-
-    //  Stop timer
-    const stopTime = performance.now();
-    appDatabase.timeUsed = `${(stopTime - startTime).toFixed(2)} ms`;
-
-    // UPDATING UI IMPLEMENTATION
-    displayResults(appDatabase);
+    // Scrambling, stop timer, hide spinner, update UI
+    const simulateDelay = function() {
+      // Scramble
+      scramble(appDatabase);
+      // Hide Spinner
+      toggleSpinner(false);
+      //  Stop timer
+      const stopTime = performance.now();
+      appDatabase.timeUsed = `${((stopTime - startTime) / 1000).toFixed(3)}s`;
+      // UPDATE UI
+      displayResults(appDatabase);
+    }
+    // Simulate delay
+    setTimeout(() => { simulateDelay() }, DELAY_SEC);
   });
 }
 // ======= DO NOT EDIT ============== //
