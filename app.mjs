@@ -1,5 +1,6 @@
 function startApp() {
-  const DELAY_SEC = 2000;
+  const SEC_ARRAY = [1000, 1200, 1500, 1650, 1800, 2000];
+
   // Creating App Database
   const appDatabase = {};
 
@@ -122,7 +123,6 @@ function startApp() {
 
   // DISPLAY SPINNER
   const toggleSpinner = (showSpinner) => {
-    console.log("I ran o");
     const elem = document.getElementById("result__text");
     const spinner = "<span class='loading'></span>";
     if (showSpinner) {
@@ -149,6 +149,8 @@ function startApp() {
     appDatabase.scrambledSymbol = input3.value.trim() || "*";
 
     // Scrambling, stop timer, hide spinner, update UI
+    let delaySec = SEC_ARRAY[Math.floor(Math.random() * SEC_ARRAY.length)];
+    console.log(delaySec);
     const simulateDelay = function() {
       // Scramble
       scramble(appDatabase);
@@ -161,7 +163,7 @@ function startApp() {
       displayResults(appDatabase);
     }
     // Simulate delay
-    setTimeout(() => { simulateDelay() }, DELAY_SEC);
+    setTimeout(() => { simulateDelay() }, delaySec);
   });
 }
 // ======= DO NOT EDIT ============== //
